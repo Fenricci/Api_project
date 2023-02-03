@@ -40,3 +40,19 @@ class GoogleMapsApi():
         result_get = HTTPMethods.get(get_url)
         print(result_get.text)
         return result_get
+
+    '''Метод для изменения адреса новой локации'''
+    @staticmethod
+    def update_new_place(place_id):
+
+        put_resource = "/maps/api/place/update/json"  # Ресурс метода PUT
+        put_url = base_url + put_resource + key
+        print(put_url)
+        json_for_update_new_location = {
+            "place_id":place_id,
+            "address":"100 Lenina street, RU",
+            "key":"qaclick123"
+        }
+        result_put = HTTPMethods.put(put_url,json_for_update_new_location)
+        print(result_put.text)
+        return result_put
