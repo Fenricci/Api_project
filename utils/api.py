@@ -23,7 +23,7 @@ class GoogleMapsApi():
             "language": "French-IN"
         }
 
-        post_resource = "/maps/api/place/add/json" # Ресурс для метода post
+        post_resource = "/maps/api/place/add/json"  # Ресурс для метода post
         post_url = base_url + post_resource + key
         print(post_url)
         result_post = HTTPMethods.post(post_url, json_body_for_create_new_place)
